@@ -210,18 +210,103 @@
 // console.log(min);
 
 //====== reverce =====
-const str = "Ми сьогодні будемо перевертати текст";
-// const reversArr = str.split("").reverse().join("");
+// const str = "Ми сьогодні будемо перевертати текст";
+// // const reversArr = str.split("").reverse().join("");
+
+// // console.log(str);
+// // console.log(reversArr);
+
+// const letters = str.split("");
+// const newArr = [];
+
+// for (let i = letters.length - 1; i >= 0; i = i - 1) {
+//   newArr.push(letters[i]);
+// }
+
+// const reverseArr = newArr.join("");
 
 // console.log(str);
-// console.log(reversArr);
+// console.log(letters);
+// console.log(newArr);
+// console.log(reverseArr);
 
-const letters = str.split("");
-const newArr = [];
+//==========first letter Uper Case =====
 
-for (let i = letters.length - 1; i >= 0; i = i - 1) {
-  newArr.push(letters[i]);
-}
+// const str = "ми змінимо кожну першу літеру на велику";
+// const words = str.split(" ");
 
-console.log(str);
-console.log(letters);
+// for (let i = 0; i < words.length; i = i + 1) {
+//   if (i > 0) {
+//     const word = words[i];
+//     const newWord = word[0].toUpperCase() + word.slice(1);
+//     words[i] = newWord;
+//   }
+// }
+
+// const newStr = words.join(" ");
+
+// console.log(str);
+// console.log(words);
+// console.log(newStr);
+//=======polindrom======
+
+// const str0 = "Tenet";
+// const str1 = "Леша на полке клопа нашел";
+// const str2 = "Искать такси";
+// const str3 = "Существуют разновидности";
+
+// const str = str1.toLowerCase().replaceAll(" ", "");
+// const letters = str.split("");
+// const newStr = [];
+
+// for (let i = letters.length - 1; i >= 0; i = i - 1) {
+//   newStr.push(letters[i]);
+// }
+
+// for (let i = 0; i < str1.length; i = i + 1) {
+//   if (str1[i] === " ") {
+//     newStr.splice(i, 0, " ");
+//   }
+// }
+
+// let reverseStr = newStr.join("");
+// const isPolindrome = str1.toLowerCase() === reverseStr;
+
+// console.log(str1);
+// console.log(reverseStr);
+// console.log("isPolindrome", isPolindrome);
+
+//=======concat=====
+
+// const oldList = ["Eugene", "Olha"];
+// const newList = ["Milana"];
+// const family = oldList.concat(newList);
+// const family2 = [...oldList, "hello", newList];
+
+// console.log(oldList);
+// console.log(newList);
+// console.log(family);
+// console.log(family2);
+
+//========sort======
+// const arr = [3, 2, 1, 4, 0];
+
+// for (let i = 0; i < arr.length; i = i + 1) {
+//   for (let j = 0; j < arr.length; j = j + 1) {
+//     if (arr[j] > arr[i]) {
+//       const x = arr[i];
+
+//       arr[i] = arr[j];
+//       arr[j] = x;
+//     }
+//   }
+// }
+
+// console.log(arr);
+
+//=======split=====
+
+// const str = "asdsd sdsdsd";
+
+// const arr = str.split(" ");
+// console.log(arr);
