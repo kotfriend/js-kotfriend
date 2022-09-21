@@ -125,9 +125,103 @@
 //   console.log(c);
 // }
 
-//===== includes ====
-const str =
-  "Тут написано якийсь текс, для того щоб перевірити функцію includes";
-const result = str.toLowerCase().includes("якИйсь".toLocaleLowerCase);
+// //===== includes ====
+// const str =
+//   "Тут написано якийсь текс, для того щоб перевірити функцію includes";
+// const result = str.toLowerCase().includes("якИйсь".toLocaleLowerCase);
 
-console.log("Результат:", result);
+// console.log("Результат:", result);
+
+// const clients = ["Mango", "Ajax", "Poly"];
+
+// for (const client of clients) {
+//   console.log(client);
+// }
+
+// const string = "javascript";
+
+// for (const character of string) {
+//   console.log(character);
+// }
+
+// const arr = [1, 2, 3, 4];
+
+// arr.push(5);
+
+// // console.log(arr);
+
+// //======split======
+// const text = "Ми сьогодні будемо їсти курку та картоплю";
+// const arr = text.split(" ");
+
+// console.log(arr);
+
+// //========join=======
+// const newArr = arr.join(" | ");
+// console.log(newArr);
+
+// //======indexOf=======
+// console.log(arr.indexOf("та"));
+
+// //======includes======
+// console.log(arr.includes("та"));
+
+// //===========push&pop=======
+// const arr = [1, 2, 3, 4];
+
+// console.log(arr);
+
+// arr.push(5);
+// console.log(arr);
+
+// const retX = arr.pop();
+// console.log(arr);
+// console.log(retX);
+// const arr = [1, 2, 3, 4, 5, 6];
+// let sum1 = 0;
+// let sum2 = 0;
+
+// for (let i = 0; i < arr.length; i += 1) {
+//   sum1 += arr[i];
+// }
+
+// for (const value of arr) {
+//   sum2 += value;
+// }
+
+// console.log(sum1);
+// console.log(sum2);
+
+//==== min max ====
+// const arr = [15, 10, 4, 3, 23, 32];
+// let max = arr[0];
+// let min = arr[0];
+
+// for (const value of arr) {
+//   if (value > max) {
+//     max = value;
+//   }
+//   if (value < min) {
+//     min = value;
+//   }
+// }
+
+// console.log(max);
+// console.log(min);
+
+//====== reverce =====
+const str = "Ми сьогодні будемо перевертати текст";
+// const reversArr = str.split("").reverse().join("");
+
+// console.log(str);
+// console.log(reversArr);
+
+const letters = str.split("");
+const newArr = [];
+
+for (let i = letters.length - 1; i >= 0; i = i - 1) {
+  newArr.push(letters[i]);
+}
+
+console.log(str);
+console.log(letters);
