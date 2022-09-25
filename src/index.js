@@ -439,15 +439,284 @@
 
 //========getevennumbers=====
 
-const getEvenNumber = (start = 0, end = 0) => {
-  const result = [];
-  for (let i = start; i <= end; i += 1) {
-    if (i % 2 !== 0) {
-      result.push(i);
-    }
-  }
+// const getEvenNumber = (start = 0, end = 0) => {
+//   const result = [];
+//   for (let i = start; i <= end; i += 1) {
+//     if (i % 2 !== 0) {
+//       result.push(i);
+//     }
+//   }
 
-  return result;
+//   return result;
+// };
+
+// console.log(getEvenNumber(1, 100));
+
+//========= objects =======
+
+// const users = [
+//   {
+//     email: "user1@gmail.com",
+//     password: "12345",
+//     name: "Eugene",
+//     phone: "444-555-3333",
+//   },
+//   {
+//     email: "user2@gmail.com",
+//     password: "qwerty",
+//     name: "Milana",
+//     phone: "222-111-4444",
+//   },
+//   {
+//     email: "user3@gmail.com",
+//     password: "qwerty",
+//     name: "Olha",
+//     phone: "222-111-4444",
+//   },
+// ];
+
+// function sayHell(user) {
+//   console.log(`Hello, ${user.name}`);
+// }
+
+// const email = prompt("Please enter your email");
+// const password = prompt("Please enter your password");
+
+// for (let user of users) {
+//   if (user.email === email && user.password === password) {
+//     sayHell(user);
+//     console.log("You entered to your account");
+//   }
+// }
+
+//======== object car =======
+// const car = {
+//   isOn: false,
+//   speed: 0,
+//   maxSpeed: 200,
+
+//   startEngine() {
+//     this.isOn = true;
+//   },
+//   stopEngine() {
+//     this.isOn = false;
+//   },
+//   setSpeed(value) {
+//     if (!this.isOn) return;
+//     if (value > this.maxSpeed) {
+//       this.speed = this.maxSpeed;
+//     } else {
+//       this.speed = value;
+//     }
+//   },
+// };
+// console.log(car);
+
+// car.startEngine();
+// console.log(car);
+
+// car.setSpeed(1500);
+// console.log(car);
+
+// car.speed = 500;
+// console.log(car);
+
+//=========== Acsess to object =====
+// const obj2 = {};
+
+// const obj = {
+//   web: 1,
+//   ddd: 1,
+//   odd: 1,
+// };
+
+// obj.new = 1;
+// obj[obj2] = 1;
+
+// console.log(object["web"]);
+// console.log(Object.keys(obj));
+
+// // ===== hard: keys and value ====
+// const keys = Object.keys(obj);
+// console.log(keys);
+
+// let sum = 0;
+// for (const key of keys) {
+//   console.log(obj[key]);
+//   sum += obj[key];
+// }
+
+// console.log("sum:", sum);
+
+// ======= ease: only value =====
+// const values = Object.values(obj);
+// let sum = 0;
+// for (const value of values) {
+//   sum += value;
+// }
+
+// console.log(sum);
+
+// ======= mixed=======
+// console.log(Object.keys(obj));
+// console.log(Object.values(obj));
+// console.log(Object.entries(obj));
+
+// ======= object - deleting keys ====
+
+// console.log(obj);
+// delete obj.ddd;
+
+// console.log(obj);
+
+//========reference======
+// const obj1 = {
+//   name: "Bobby",
+// };
+// console.log(obj1);
+
+// const obj2 = { ...obj1 };
+// console.log(obj2);
+
+// obj1.name = "Piter";
+// console.log(obj2);
+// console.log(obj1);
+
+// const email = "user@gmail.com";
+// const password = "11111";
+
+// const user = {
+//   email,
+//   password,
+// };
+
+// console.log(user);
+
+//========for... in=====
+
+// const hotel = {
+//   name: "Resort Hotel",
+//   stars: 5,
+//   capacity: 100,
+// };
+
+// for (const key in hotel) {
+//   console.log("Key:", key);
+// }
+
+//========spread=====
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// console.log(Math.min(...numbers));
+// console.log(Math.max(...numbers));
+
+// //======copy=====
+// const arr1 = [1, 1, 3];
+// const arr2 = [...arr1];
+
+// arr1.push(2);
+
+// console.log(arr1);
+// console.log(arr2);
+
+//========rest======
+// function sum(a, b, ...rest) {
+//   console.log(a + b);
+//   console.log("rest:", rest);
+// }
+
+// sum(1, 2, 1, 2, 3);
+
+//======example=====
+const card = {
+  items: [],
+  getItems() {
+    return this.items;
+  },
+  add(product) {
+    this.items.push({
+      ...product,
+      count: 1,
+    });
+  },
+  remove(productName) {
+    const newItems = [];
+
+    for (const item of this.items) {
+      if (item.name !== productName) {
+        newItems.push(item);
+      }
+    }
+    this.items = newItems;
+  },
+  clear() {
+    this.items = [];
+  },
+  countTotalPrice() {
+    let sum = 0;
+    for (const item of this.items) {
+      sum += item.price;
+    }
+    return sum;
+  },
+  increaseQuantity(productName) {
+    const newItems = [];
+
+    for (const item of this.items) {
+      newItems.push(
+        item.name === productName
+          ? {
+              ...item,
+              count: item.count + 1,
+            }
+          : item
+      );
+    }
+    this.items = newItems;
+  },
+  decreaseQuantity(productName) {
+    const newItems = [];
+
+    for (const item of this.items) {
+      newItems.push(
+        item.name === productName
+          ? {
+              ...item,
+              count: item.count - 1 < 1 ? 1 : item.count - 1,
+            }
+          : item
+      );
+    }
+    this.items = newItems;
+  },
 };
 
-console.log(getEvenNumber(1, 100));
+// console.log(card);
+
+console.table(card.getItems());
+card.add({ name: "Apple", price: 50 });
+card.add({ name: "Lemon", price: 60 });
+card.add({ name: "Orange", price: 60 });
+card.add({ name: "Bearberry", price: 120 });
+// console.log(card);
+
+console.table(card.getItems());
+card.remove("Apple");
+console.table(card.getItems());
+
+console.log("Total Price:", card.countTotalPrice());
+
+card.increaseQuantity("Bearberry");
+card.increaseQuantity("Bearberry");
+card.increaseQuantity("Bearberry");
+card.increaseQuantity("Bearberry");
+card.increaseQuantity("Lemon");
+console.table(card.getItems());
+
+card.decreaseQuantity("Lemon");
+card.decreaseQuantity("Lemon");
+card.decreaseQuantity("Lemon");
+console.table(card.getItems());
+
+card.clear();
+console.table(card.getItems());
