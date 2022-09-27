@@ -627,96 +627,297 @@
 
 // sum(1, 2, 1, 2, 3);
 
-//======example=====
-const card = {
-  items: [],
-  getItems() {
-    return this.items;
-  },
-  add(product) {
-    this.items.push({
-      ...product,
-      count: 1,
-    });
-  },
-  remove(productName) {
-    const newItems = [];
+// //======example=====
+// const card = {
+//   items: [],
+//   getItems() {
+//     return this.items;
+//   },
+//   add(product) {
+//     this.items.push({
+//       ...product,
+//       count: 1,
+//     });
+//   },
+//   remove(productName) {
+//     const newItems = [];
 
-    for (const item of this.items) {
-      if (item.name !== productName) {
-        newItems.push(item);
-      }
-    }
-    this.items = newItems;
-  },
-  clear() {
-    this.items = [];
-  },
-  countTotalPrice() {
-    let sum = 0;
-    for (const item of this.items) {
-      sum += item.price;
-    }
-    return sum;
-  },
-  increaseQuantity(productName) {
-    const newItems = [];
+//     for (const item of this.items) {
+//       if (item.name !== productName) {
+//         newItems.push(item);
+//       }
+//     }
+//     this.items = newItems;
+//   },
+//   clear() {
+//     this.items = [];
+//   },
+//   countTotalPrice() {
+//     let sum = 0;
+//     for (const item of this.items) {
+//       sum += item.price;
+//     }
+//     return sum;
+//   },
+//   increaseQuantity(productName) {
+//     const newItems = [];
 
-    for (const item of this.items) {
-      newItems.push(
-        item.name === productName
-          ? {
-              ...item,
-              count: item.count + 1,
-            }
-          : item
-      );
-    }
-    this.items = newItems;
-  },
-  decreaseQuantity(productName) {
-    const newItems = [];
+//     for (const item of this.items) {
+//       newItems.push(
+//         item.name === productName
+//           ? {
+//               ...item,
+//               count: item.count + 1,
+//             }
+//           : item
+//       );
+//     }
+//     this.items = newItems;
+//   },
+//   decreaseQuantity(productName) {
+//     const newItems = [];
 
-    for (const item of this.items) {
-      newItems.push(
-        item.name === productName
-          ? {
-              ...item,
-              count: item.count - 1 < 1 ? 1 : item.count - 1,
-            }
-          : item
-      );
-    }
-    this.items = newItems;
-  },
-};
+//     for (const item of this.items) {
+//       newItems.push(
+//         item.name === productName
+//           ? {
+//               ...item,
+//               count: item.count - 1 < 1 ? 1 : item.count - 1,
+//             }
+//           : item
+//       );
+//     }
+//     this.items = newItems;
+//   },
+// };
 
-// console.log(card);
+// // console.log(card);
 
-console.table(card.getItems());
-card.add({ name: "Apple", price: 50 });
-card.add({ name: "Lemon", price: 60 });
-card.add({ name: "Orange", price: 60 });
-card.add({ name: "Bearberry", price: 120 });
-// console.log(card);
+// console.table(card.getItems());
+// card.add({ name: "Apple", price: 50 });
+// card.add({ name: "Lemon", price: 60 });
+// card.add({ name: "Orange", price: 60 });
+// card.add({ name: "Bearberry", price: 120 });
+// // console.log(card);
 
-console.table(card.getItems());
-card.remove("Apple");
-console.table(card.getItems());
+// console.table(card.getItems());
+// card.remove("Apple");
+// console.table(card.getItems());
 
-console.log("Total Price:", card.countTotalPrice());
+// console.log("Total Price:", card.countTotalPrice());
 
-card.increaseQuantity("Bearberry");
-card.increaseQuantity("Bearberry");
-card.increaseQuantity("Bearberry");
-card.increaseQuantity("Bearberry");
-card.increaseQuantity("Lemon");
-console.table(card.getItems());
+// card.increaseQuantity("Bearberry");
+// card.increaseQuantity("Bearberry");
+// card.increaseQuantity("Bearberry");
+// card.increaseQuantity("Bearberry");
+// card.increaseQuantity("Lemon");
+// console.table(card.getItems());
 
-card.decreaseQuantity("Lemon");
-card.decreaseQuantity("Lemon");
-card.decreaseQuantity("Lemon");
-console.table(card.getItems());
+// card.decreaseQuantity("Lemon");
+// card.decreaseQuantity("Lemon");
+// card.decreaseQuantity("Lemon");
+// console.table(card.getItems());
 
-card.clear();
-console.table(card.getItems());
+// card.clear();
+// console.table(card.getItems());
+
+// ======== дереструктирізація=====
+
+// function getHotelNameAndCapacity(house) {
+//   const { name = "No name hotel", freeSpaces: capacity, stars } = house;
+//   return capacity
+//     ? `${name} has ${stars} stars and has ${capacity} free rooms`
+//     : `${name} has ${stars} stars and has no free rooms`;
+// }
+
+// const getHotelNameAndCapacity = ({
+//   name = "No name hotel",
+//   freeSpaces: capacity,
+//   stars,
+// }) => {
+//   capacity
+//     ? `${name} has ${stars} stars and has ${capacity} free rooms`
+//     : `${name} has ${stars} stars and has no free rooms`;
+// };
+
+// const hotel1 = {
+//   name: "Resort Hotel",
+//   stars: 5,
+// };
+
+// const hotel2 = {
+//   name: "Viva Hotel",
+//   stars: 3,
+//   freeSpaces: 50,
+// };
+
+// const hotel3 = {
+//   stars: 5,
+//   freeSpaces: 200,
+// };
+
+// console.log(getHotelNameAndCapacity(hotel1));
+// console.log(getHotelNameAndCapacity(hotel2));
+// console.log(getHotelNameAndCapacity(hotel3));
+
+//========деструктурізація масиву=====
+// const arr = ["Boddy", "Piter", "John"];
+
+// const [firstPersone, secondPerson, thirdthPerson] = arr;
+
+// console.log(firstPersone);
+// console.log(secondPerson);
+// console.log(thirdthPerson);
+
+//====== array react exeple=====
+// let userName = "";
+// const setUserName = (name) => {
+//   userName = name;
+// };
+
+// console.log(userName);
+// setUserName("Bobby");
+// console.log(userName);
+// setUserName("John");
+// console.log(userName);
+
+// const useState = [userName, setUserName];
+// const [value, seteValue] = useState;
+// console.log(value);
+// console.log(seteValue);
+
+// //===== array swap====
+// let a = 5;
+// let b = 10;
+
+// console.log("=======");
+// console.log("a:", a);
+// console.log("b:", b);
+
+// const temp = a;
+// (a = b), (b = temp);
+
+// console.log("=======");
+// console.log("a:", a);
+// console.log("b:", b);
+
+// [a, b] = [b, a];
+// console.log("=======");
+// console.log("a:", a);
+// console.log("b:", b);
+
+// //======= object====
+// const obj = {
+//   name: "Bobby",
+// };
+
+// console.log(obj.name);
+// console.log(obj.age);
+
+// obj.age = 15;
+// console.log(obj.age);
+
+// console.log(obj);
+
+//======example 1====
+
+// const p1 = "Racecar";
+// const p2 = "taBle";
+// const p3 = "My gym";
+// const p4 = "Около миши молоко";
+
+// function isPolindrom(str) {
+//   const text = str.toLowerCase().replaceAll(" ", "");
+//   // const arr = text.split("");
+//   // const reversedArray = arr.reverse();
+//   // const reversedText = reversedArray.join("");
+//   const reversedText = text.split("").reverse().join("");
+
+//   return reversedText === text;
+// }
+
+// console.log(p1);
+// console.log(isPolindrom(p1));
+// console.log("=========");
+// console.log(p2);
+// console.log(isPolindrom(p2));
+// console.log("=========");
+// console.log(p3);
+// console.log(isPolindrom(p3));
+// console.log("=========");
+// console.log(p4);
+// console.log(isPolindrom(p4));
+
+//======example 2====
+// function fizzBazz(number) {
+//   for (let i = 1; i <= number; i++) {
+//     if (i % 3 === 0 && i % 5 === 0) {
+//       console.log("fizzBazz");
+//       continue;
+//     }
+//     if (i % 3 === 0) {
+//       console.log("fizz");
+//       continue;
+//     }
+//     if (i % 5 === 0) {
+//       console.log("bazz");
+//       continue;
+//     }
+//     console.log(i);
+//   }
+// }
+
+// fizzBazz(15);
+
+//======example 3 Anagram====
+// const w1 = "finder";
+// const w2 = "Friend";
+
+// function getLetters(word) {
+//   const result = {};
+
+//   for (let i = 0; i < word.length; i = i + 1) {
+//     const letter = word[i];
+//     result[letter] = result[letter] ? result[letter] + 1 : 1;
+//   }
+
+//   // const arr = word.split("");
+//   return result;
+// }
+// function isAnagram(str1, str2) {
+//   const letters1 = getLetters(str1);
+//   const letters2 = getLetters(str2);
+
+//   const item1 = Object.entries(letters1);
+//   const item2 = Object.entries(letters2);
+
+//   const haveSameLength = item1.length === item2.length;
+//   let containAllWords = true;
+
+//   for (let i = 0; i < item1; i = i + 1) {
+//     const [key, value] = item1[i];
+//     const secondValue = letters2[key];
+
+//     if (value !== secondValue) {
+//       containAllWords = false;
+//       break;
+//     }
+//   }
+
+//   return haveSameLength && containAllWords;
+// }
+// console.log(isAnagram(w1, w2));
+
+//======example 4 Anagram====
+// const w1 = "finder";
+// const w2 = "friend";
+
+// function isAnagram(str1, str2) {
+//   const sortedW1 = str1.split("").sort().join("");
+//   const sortedW2 = str2.split("").sort().join("");
+
+//   return sortedW1 === sortedW2;
+// }
+
+// console.log("========");
+// console.log(isAnagram(w1, w2));
