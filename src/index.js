@@ -1021,3 +1021,91 @@
 
 // console.log(reduce(arr1, sum, 0));
 // console.log(reduce(arr1, (acc, value) => acc * value, 1));
+
+// //=======closure======
+// function count(x = 1) {
+//   return function () {
+//     x += 1;
+//     console.log(x);
+//   };
+// }
+
+// console.log("======== count 1 =======");
+// const count1 = count(10);
+// count1();
+// count1();
+// count1();
+// count1();
+// count1();
+
+// console.log("======== count 2 =======");
+// const count2 = count();
+// count2();
+
+//=======this======
+// const person1 = {
+//   name: "Bobby",
+//   age: 15,
+// };
+
+// const person2 = {
+//   name: "Piter",
+//   age: 20,
+// };
+
+// function sayHello() {
+//   console.log(this);
+// }
+
+// sayHello.call(person1);
+// sayHello.apply(person2);
+
+//======bind 1========
+// const person1 = {
+//   name: "Bobby",
+//   age: 15,
+//   sayHello() {
+//     console.log(this);
+//   },
+// };
+
+// const fn1 = person1.sayHello.bind(person1);
+// fn1();
+
+// setTimeout(person1.sayHello.bind(person1), 2000);
+
+//======bind 2========
+// const person1 = {
+//   name: "Bobby",
+//   age: 15,
+// };
+
+// const person2 = {
+//   name: "Piter",
+//   age: 20,
+// };
+
+// function sayHello() {
+//   console.log(this);
+// }
+
+// setTimeout(sayHello.bind(person1), 2000);
+// setTimeout(sayHello.bind(person2), 4000);
+
+// ======= strike function =======
+const person1 = {
+  name: "Bobby",
+  age: 15,
+
+  sayBye() {
+    console.log(this);
+
+    const inter = () => {
+      console.log("inertFn:", this);
+    };
+
+    inter();
+  },
+};
+
+person1.sayBye();
