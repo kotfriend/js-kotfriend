@@ -921,3 +921,103 @@
 
 // console.log("========");
 // console.log(isAnagram(w1, w2));
+
+//======set timeout=====
+
+// const sayHello = () => console.log("Hello");
+
+// console.log("start");
+// setTimeout(sayHello, 2000);
+
+// console.log("end");
+
+// function fn1(callback) {
+//   callback();
+//   console.log("Hello from FN1");
+// }
+// function fn2() {
+//   console.log("Hello from FN2");
+// }
+
+// fn1(fn2);
+
+//=======map=====
+// const names = ["baby", "richard", "john"];
+// const numbers1 = [100, 200, 300];
+// const numbers2 = [100, 200, 300];
+
+// function map(arr, callback) {
+//   const result = [];
+//   for (const value of arr) {
+//     result.push(callback(value));
+//   }
+//   return result;
+// }
+
+// function namesToList(name) {
+//   return `<li>${name}</li>`;
+// }
+
+// function numbersToList(number) {
+//   return `<li>${number / 100}$</li>`;
+// }
+
+// console.log(map(names, namesToList));
+// console.log(map(numbers1, numbersToList));
+// console.log(map(numbers2, (number) => number * 2));
+
+//=====filter====
+// const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const arr4 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// function filter(arr, callback) {
+//   const result = [];
+
+//   for (const value of arr) {
+//     if (callback(value)) {
+//       result.push(value);
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(filter(arr1, (value) => value < 5));
+// console.log(filter(arr2, (value) => value > 5));
+// console.log(filter(arr3, (value) => value % 2 === 0));
+// console.log(filter(arr4, (value) => value % 2 !== 0));
+
+//=======find======
+// const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// function find(arr, callback) {
+//   for (const value of arr) {
+//     if (callback(value)) {
+//       return value;
+//     }
+//   }
+// }
+
+// console.log(find(arr1, (arr) => arr > 7));
+// console.log(find(arr1, (arr) => arr % 2 === 0));
+
+//======reduce===
+// const arr1 = [1, 1, 1, 1, 1, 1, 4, 4];
+
+// function reduce(arr, callback, initialValue) {
+//   let result = initialValue || arr[0];
+
+//   for (let value of arr) {
+//     result = callback(result, value);
+//   }
+//   return result;
+// }
+
+// function sum(a, b) {
+//   return a + b;
+// }
+
+// console.log(reduce(arr1, sum, 0));
+// console.log(reduce(arr1, (acc, value) => acc * value, 1));
