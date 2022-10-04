@@ -1093,19 +1093,19 @@
 // setTimeout(sayHello.bind(person2), 4000);
 
 // ======= strike function =======
-const person1 = {
-  name: "Bobby",
-  age: 15,
+// const person1 = {
+//   name: "Bobby",
+//   age: 15,
 
-  sayBye() {
-    console.log(this);
+//   sayBye() {
+//     console.log(this);
 
-    const inter = () => {
-      console.log("inertFn:", this);
-    };
+//     const inter = () => {
+//       console.log("inertFn:", this);
+//     };
 
-    inter();
-  },
-};
+//     inter();
+//   },
+// };
 
-person1.sayBye();
+// person1.sayBye();
