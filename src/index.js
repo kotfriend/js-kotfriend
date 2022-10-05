@@ -1109,3 +1109,90 @@
 // };
 
 // person1.sayBye();
+
+//========constructor========
+// const Human = function (name, age) {
+//   this.name = name;
+//   this.age = age;
+
+//   this.sayHello = function () {
+//     console.log(`Hello ${name}, you are ${age} years old`);
+//   };
+// };
+
+// const bobby = new Human("Bobby", 15);
+// const milana = new Human("Milana", 10);
+// console.log(bobby);
+// console.log(milana);
+
+// bobby.sayHello();
+// milana.sayHello();
+
+//=======constructor banc account =============
+// function Account(number, amount = 0, currancy) {
+//   this.number = number;
+//   this.amount = amount;
+//   this.currancy = currancy;
+
+//   this.add = function (value) {
+//     this.amount += value;
+//   };
+
+//   this.minus = function (value) {
+//     if (this.amount >= value) {
+//       this.amount -= value;
+//     } else {
+//       console.log(
+//         `Your balance is ${amount}. You can't minus ${value}. Please add you balance`
+//       );
+//     }
+//   };
+// }
+
+// const account1 = new Account(26000434554, 100, "USD");
+// const account2 = new Account(26000434234, 50, "EUR");
+// const account3 = new Account(26000434321, 0, "UAH");
+
+// console.log(account1);
+// console.log(account2);
+// console.log(account3);
+
+// console.log("========add=======");
+
+// account1.add(50);
+// account2.add(1000);
+// account3.add(100100);
+// console.log(account1);
+// console.log(account2);
+// console.log(account3);
+
+// console.log("========minus=======");
+
+// account1.minus(30);
+// account2.minus(1700);
+// account3.minus(100);
+// console.log(account1);
+// console.log(account2);
+// console.log(account3);
+
+//========encapsulation====
+// const counter = function (value = 0) {
+//   return function () {
+//     console.log(value++);
+//   };
+// };
+
+// const counter1 = counter();
+// counter1();
+// counter1();
+// counter1();
+// counter1();
+// counter1();
+
+//=====kahoot question =====
+const a = {};
+const b = { key: "b" };
+const c = { key: "c" };
+a[b] = 1;
+a[c] = 2;
+console.log(a[b]);
