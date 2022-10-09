@@ -1196,3 +1196,119 @@
 // a[b] = 1;
 // a[c] = 2;
 // console.log(a[b]);
+
+// ===== class es6 ====
+
+// function legacyAnimal(name) {
+//   this.name = name;
+
+//   this.wolk = function () {
+//     console.log(`This ${this.name} is wolking`);
+//   };
+// }
+
+// class Animal {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   wolk() {
+//     console.log(`This ${this.name} is wolking`);
+//   }
+// }
+
+// class Dog extends Animal {
+//   constructor(name, age) {
+//     super(name);
+//     this.age = age;
+//   }
+//   gaff() {
+//     console.log("Gaff Gaff");
+//   }
+// }
+// class Cat extends Animal {
+//   constructor(name, age) {
+//     super(name);
+//     this.age = age;
+//   }
+//   myay() {
+//     console.log("Myay Myay");
+//   }
+// }
+
+// const someAnimal1 = new legacyAnimal("Alisha");
+// const someAnimal2 = new Animal("Tuzik");
+// const someAnimal3 = new Dog("Strelka", 3);
+// const someAnimal4 = new Cat("Belok", 10);
+
+// console.log("======= function ======");
+// console.log(someAnimal1);
+// console.log("======= class ======");
+// console.log(someAnimal2);
+// console.log("======= but function working ======");
+// someAnimal1.wolk();
+// someAnimal2.wolk();
+// console.log("======= class to class ======");
+// console.log(someAnimal3);
+// console.log(someAnimal4);
+// someAnimal3.wolk();
+// someAnimal4.wolk();
+// someAnimal3.gaff();
+// someAnimal4.myay();
+
+//====== auto getter setter ====
+// class Car {
+//   #speed = 0;
+
+//   static someValue = 100500;
+
+//   constructor({ maxSpeed = 0 }) {
+//     this.maxSpeed = maxSpeed;
+
+//     this.isOn = false;
+//   }
+
+//   turnOn() {
+//     this.isOn = true;
+//   }
+//   turnOff() {
+//     this.isOn = false;
+//   }
+//   // setSpeed(value) {
+//   //   if (value <= this.maxSpeed) {
+//   //     this.speed = value;
+//   //   } else {
+//   //     this.speed = this.maxSpeed;
+//   //   }
+//   // }
+
+//   get speed() {
+//     return this.#speed;
+//   }
+//   set speed(value) {
+//     if (value <= this.maxSpeed) {
+//       this.#speed = value;
+//     } else {
+//       this.#speed = this.maxSpeed;
+//     }
+//   }
+// }
+
+// const car1 = new Car({ maxSpeed: 100 });
+// console.log(car1);
+
+// car1.turnOn();
+// console.log(car1);
+// car1.speed = 200;
+// console.log(car1);
+// console.log(car1.speed);
+
+//======prototype ES5========
+
+// function getValue(text) {
+//   return text
+//     .toUpperCase()
+//     .split("")
+//     .filter((value, idx, arr) => arr.indexOf(value) === idx);
+// }
+
+// console.log(getValue("AAAaBBBCCC"));
