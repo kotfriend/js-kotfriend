@@ -1312,3 +1312,186 @@
 // }
 
 // console.log(getValue("AAAaBBBCCC"));
+
+//======forEach=======
+// const numbers = [1, 2, 3];
+// for (let i = 0; i < numbers.length; i += 1) {
+//   console.log(i, numbers[i]);
+// }
+
+// let sum = 0;
+// numbers.forEach((value) => {
+//   console.log(value);
+//   sum += value;
+// });
+
+// console.log(sum);
+
+//=========map=======
+// const numbers = [1, 2, 3];
+
+// const dubledNumbers = numbers.map((num) => num * 2);
+// console.log(numbers);
+// console.log(dubledNumbers);
+
+//======map cractic=====
+
+// const ulrs = ["www.google.com", "www.facebook.com"];
+
+// const links = ulrs.map((value) => `<a href="${value}">${value}</a>`);
+// console.log(links);
+
+//=======map objects======
+// const users = [
+//   { name: "Mango", isActive: true },
+//   { name: "Pearch", isActive: false },
+//   { name: "Kiwi", isActive: true },
+// ];
+
+// console.log(users.map((value) => value.name));
+// console.log(
+//   users.map(
+//     ({ name, isActive }) => `${name} is ${isActive ? `Active` : `Not Active`}`
+//   )
+// );
+//========filter========
+// const users = [
+//   { name: "Mango", isActive: true },
+//   { name: "Pearch", isActive: false },
+//   { name: "Kiwi", isActive: true },
+// ];
+
+// const usersActive = users.filter((user) => user.isActive);
+// const usersNotActive = users.filter(function (user) {
+//   return !user.isActive;
+// });
+// console.log(usersActive);
+// console.log(usersNotActive);
+
+//======filter/delete=====
+
+// let users = [
+//   { name: "Mango", isActive: true },
+//   { name: "Pearch", isActive: false },
+//   { name: "Kiwi", isActive: true },
+// ];
+
+// users = users.filter((user) => user.name !== "Kiwi");
+// console.log(users);
+
+//=======filter unique=====
+// const numbers = [1, 1, 1, 1, 2, 2, 3, 4, 4, 4, 4, 5, 5];
+// const uniqueNumbers = numbers.filter(
+//   (value, idx, arr) => arr.indexOf(value) === idx
+// );
+// console.log(uniqueNumbers);
+//======find======
+// const users = [
+//   { name: "Mango", isActive: false },
+//   { name: "Pearch", isActive: false },
+//   { name: "Kiwi", isActive: true },
+// ];
+
+// const activeUser = users.find((user) => user.isActive);
+// console.log(activeUser);
+
+//=======flat======
+// const arr = [1, 2, [3, 4, [5, 6]]];
+// console.log(arr);
+// console.log(arr.flat());
+// console.log(arr.flat(2));
+
+//=======every=====
+// const arr1 = [1, 2, 3, 4, 5, 6, 7, 8];
+// const arr2 = [2, 4, 6, 8];
+// const arrEven1 = arr1.every((value) => value % 2 === 0);
+// const arrEven2 = arr2.every((value) => value % 2 === 0);
+
+// console.log("arr1:", arrEven1);
+// console.log("arr2:", arrEven2);
+//=====some=======
+// const arr1 = [1, 3, 5, 7];
+// const arr2 = [2, 4, 6, 8];
+// const someEven1 = arr1.some((value) => value % 2 === 0);
+// const someEven2 = arr2.some((value) => value % 2 === 0);
+
+// console.log("arr1:", someEven1);
+// console.log("arr2:", someEven2);
+
+// const users = [
+//   { name: "Mango", isActive: false },
+//   { name: "Pearch", isActive: false },
+//   { name: "Kiwi", isActive: true },
+// ];
+
+// const isAllActive = users.every((user) => user.isActive);
+// console.log(isAllActive);
+// const isSomeActive = users.some((user) => user.isActive);
+// console.log(isSomeActive);
+
+//======reduce======
+// const numbers = [1, 1, 1, 10];
+
+// const sum = numbers.reduce((acc, value) => {
+//   return (acc += value);
+// }, 0);
+
+// console.log(sum);
+
+//======reduce 2======
+// const users = [
+//   { name: "printer", price: 100 },
+//   { name: "phone", price: 200 },
+//   { name: "laptoop", price: 300 },
+// ];
+
+// const sum = users.reduce((acc, obj) => {
+//   return acc + obj.price;
+// }, 0);
+// console.log(sum);
+
+//======sort======
+// const names = ["Olha", "abby", "Milana", "Eugene"];
+// names.sort();
+// console.log(names);
+
+// names.sort((a, b) => {
+//   const v1 = a.toLowerCase();
+//   const v2 = b.toLowerCase();
+
+//   if (v1 < v2) return -1;
+//   if (v1 > v2) return 1;
+
+//   return 0;
+// });
+
+// console.log(names);
+
+// //======sort2======
+// const numbers = [1, 2, 4, 3, 7, 6, 5, 8, 10, 0, -10];
+// numbers.sort();
+
+// console.log("not correct:", numbers);
+
+// numbers.sort((a, b) => a - b);
+
+// console.log("correct:", numbers);
+
+//=========цепочки методов масивов====
+// const text = "abc";
+// const reversedText = text.split("").reverse().join("");
+
+// console.log(text);
+// console.log(reversedText);
+
+const users = [
+  { name: "printer", price: 100 },
+  { name: "phone", price: 200 },
+  { name: "laptoop", price: 100 },
+];
+
+const names = users
+  .filter(({ price }) => price === 100)
+  .map(({ name }) => name);
+
+console.log(names);
