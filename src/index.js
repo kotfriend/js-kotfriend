@@ -1484,14 +1484,69 @@
 // console.log(text);
 // console.log(reversedText);
 
-const users = [
-  { name: "printer", price: 100 },
-  { name: "phone", price: 200 },
-  { name: "laptoop", price: 100 },
-];
+// const users = [
+//   { name: "printer", price: 100 },
+//   { name: "phone", price: 200 },
+//   { name: "laptoop", price: 100 },
+// ];
 
-const names = users
-  .filter(({ price }) => price === 100)
-  .map(({ name }) => name);
+// const names = users
+//   .filter(({ price }) => price === 100)
+//   .map(({ name }) => name);
 
-console.log(names);
+// console.log(names);
+
+//======indexOf exemple ======
+// const names = ["Milana", "Eugene", "Olha", "Olha", "Milana"];
+
+// const unuqueNames = names.filter(
+//   (value, idx, arr) => arr.indexOf(value) === idx
+// );
+// console.log(unuqueNames);
+
+//========reduce example=======
+// const numbers = [1, 1, 1, 1, 1, 1];
+// const sum = numbers.reduce((acc, value) => {
+//   return acc + value;
+// }, 0);
+// console.log("sum:", sum);
+
+// const numbers2 = [-4, -2, 0, 3, 2, 444];
+// const max = numbers2.reduce((acc, value) => (value > acc ? value : acc));
+// console.log("max:", max);
+
+// const numbers3 = [-3, -2, -11, 0, 4, 3, 5];
+// const min = numbers3.reduce((acc, value) => (value < acc ? value : acc));
+// console.log("min:", min);
+
+//========reduce hard ======
+// const text = "abc abc d eeeeeee";
+// const res = text.split("").reduce((acc, letter) => {
+//   return { ...acc, [letter]: acc[letter] ? acc[letter] + 1 : 1 };
+// }, {});
+// console.log(res);
+
+//========forEach======
+// const arr1 = [1, 2, 3];
+// const arr2 = [2, 3, 4];
+// const res = [];
+
+// arr1.forEach((value) => {
+//   if (arr2.includes(value)) {
+//     res.push(value);
+//   }
+// });
+// console.log(res);
+
+//======map=======
+// const numbers = [2, 3, 4];
+// const res = numbers.map((value) => value * 2);
+
+// console.log(numbers);
+// console.log(res);
+
+//======map2=======
+// const books = ["Harry Potter", "Lord of Kings", "Cats Fighter"];
+// const list = books.map((book) => `<li>${book}</li>`);
+
+// console.log(list);
